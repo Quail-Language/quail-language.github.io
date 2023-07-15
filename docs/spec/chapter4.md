@@ -1,6 +1,18 @@
 # Quail Specification
+[Back to index](index.md)
 
 ## Chapter 4: Lexical analysis
+
+<!-- TOC -->
+* [Quail Specification](#quail-specification)
+  * [Chapter 4: Lexical analysis](#chapter-4-lexical-analysis)
+    * [4.1 Definition](#41-definition)
+      * [4.2 Defined tokens](#42-defined-tokens)
+      * [4.3 Textual representation of tokens](#43-textual-representation-of-tokens)
+        * [4.3.1 Keywords](#431-keywords)
+        * [4.3.2 Symbols](#432-symbols)
+      * [4.4 Lexing process](#44-lexing-process)
+<!-- TOC -->
 
 ### 4.1 Definition
 
@@ -33,10 +45,6 @@ Quail lexer defines following token types:
   - CONTROL_STOP_WHEN
   
   - CONTROL_EVERY
-  
-  - CONTROL_ON
-  
-  - CONTROL_WHEN
   
   - CONTROL_FOR
 
@@ -214,6 +222,10 @@ Quail lexer defines following token types:
   
   - TAB
 
+- For variables:
+  
+  - ID
+
 And following token modifiers:
 
 - SINGULAR_MOD
@@ -246,13 +258,7 @@ And following token modifiers:
 
 `every` CONTROL_EVERY
 
-`on` CONTROL_ON
-
-`when` CONTROL_WHEN
-
 `for` CONTROL_FOR
-
-
 
 `func` TYPE_FUNC
 
@@ -276,8 +282,6 @@ And following token modifiers:
 
 `void` TYPE_VOID
 
-
-
 `notnull` MOD_REQUIRE
 
 `anyof` MOD_ANYOF
@@ -287,8 +291,6 @@ And following token modifiers:
 `final` MOD_FINAL
 
 `static` MOD_STATIC
-
-
 
 `assert` EFFECT_ASSERT
 
@@ -302,21 +304,15 @@ And following token modifiers:
 
 `return` EFFECT_RETURN
 
-
-
 `break` INSTRUCTION_BREAK
 
 `continue` INSTRUCTION_CONTINUE
-
-
 
 `null` LITERAL_NULL
 
 `true` LITERAL_TRUE
 
 `false` LITERAL_FALSE
-
-
 
 `constructor` CONSTRUCTOR
 
@@ -342,6 +338,10 @@ And following token modifiers:
 
 `or` OR
 
+`has` `does` `with` `do` `then` LCPAR
+
+`end` RCPAR
+
 ##### 4.3.2 Symbols
 
 | Symbol  | Token type     |
@@ -361,7 +361,7 @@ And following token modifiers:
 | `>=`    | GREATER_EQUAL  |
 | `<=`    | LESS_EQUAL     |
 | `&&`    | AND            |
-| `\||`   | OR             |
+| `\|     | `              |
 | `\|`    | PILLAR         |
 | `:`     | RANGE          |
 | `:+`    | RANGE_INCLUDE  |
@@ -412,8 +412,6 @@ Token modifiers:
 - ARRAY_MOD
 
 - MATRIX_MOD
-
-
 
 Method `advance`
 
@@ -615,5 +613,3 @@ else
     else
         error  
 ```
-
-
