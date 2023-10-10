@@ -1,0 +1,7 @@
+# This file contains info about all major and important releases of Quail
+releases:
+  - "v2.0-alpha4"
+
+v2.0-alpha4:
+  qdk: https://github.com/Quail-Language/quail-language.github.io/raw/master/out/artifacts/qdk_jar/qdk.jar
+  qre: https://github.com/Quail-Language/quail-language.github.io/raw/master/out/artifacts/qre/qre.jar
