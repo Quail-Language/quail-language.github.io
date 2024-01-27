@@ -1,0 +1,17 @@
+# This file contains info about all major and important releases of Quail
+releases:
+  - "v2.0-RC-2"
+  - "v2.0-RC-1"
+  - "v2.0-alpha4"
+
+v2.0-RC-2:
+  qdk: https://github.com/Quail-Language/quail/releases/download/v2.0.0-RC-2/qdk.jar
+  qre: https://github.com/Quail-Language/quail/releases/download/v2.0.0-RC-2/qre.jar
+
+v2.0-RC-1:
+  qdk: https://github.com/Quail-Language/quail/releases/download/v2.0.0-RC-1/qdk.jar
+  qre: https://github.com/Quail-Language/quail/releases/download/v2.0.0-RC-1/qre.jar
+
+v2.0-alpha4:
+  qdk: https://github.com/Quail-Language/quail-language.github.io/raw/master/out/artifacts/qdk_jar/qdk.jar
+  qre: https://github.com/Quail-Language/quail-language.github.io/raw/master/out/artifacts/qre/qre.jar
