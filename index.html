@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quail Programming Language</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style-desktop-mid.css">
+  <link rel="stylesheet" href="css/style-desktop-small.css">
+  <link rel="stylesheet" href="css/style-mobile-big.css">
+  <script src="js/bootstrap.js"></script>
+  <script src="js/script.js"></script>
+</head>
+<body>
+  <main>
+    <div class="lead">
+      <header class="d-flex flex-wrap py-3 q-navbar">
+        <a href="/" class="d-flex align-items-center me-md-auto link-body-emphasis text-decoration-none">
+          <img src="images/quail80.png" alt="Logo" width="48" class="q-navbar-logo">
+          <span class="fs-4 q-navbar-logo-text">Quail</span>
+        </a>
+        <ul class="nav" id="top-navbar">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="features.html" class="nav-link">Features</a></li>
+          <li class="nav-item"><a href="download.html" class="nav-link">Download</a></li>
+          <li class="nav-item"><a href="https://github.com/Quail-Language/quail/wiki" class="nav-link">Docs</a></li>
+          <li class="nav-item"><a href="https://github.com/Quail-Language/quail/" class="nav-link">Github</a></li>
+        </ul>
+        <button onclick="toggleMenu('top-navbar')" id="burger" class="burger-button burger-i-menu"></button>
+      </header>
+
+      <div class="lead-first-row lead-first-row-desktop">
+        <div class="lead-title">
+          <span class="lead-big-pill">quail</span>
+        </div>
+        <img src="/images/quail.png" alt="Logo">
+      </div>
+      <div class="lead-first-row lead-first-row-mobile">
+        <img src="/images/quail-side.png" alt="Logo">
+        <div class="lead-title">
+          <span class="lead-big-pill">quail</span>
+        </div>
+      </div>
+      <div class="lead-second-row">
+        <div class="lead-second-subrow lss-desc-anc">
+          <p class="badge rounded-pill lss-desc">Simple and powerful programming language</p>
+        </div>
+        <div class="lead-second-subrow lss-mob-btns">
+          <span class="badge rounded-pill lss-btn q-bg-violet q-lead-btn"
+                onclick="window.location.href = '#about'">Learn more</span>
+          <span class="badge rounded-pill lss-btn q-bg-dark-teal q-lead-btn">See all features</span>
+          <span class="badge rounded-pill lss-btn q-bg-light-teal only-mobile q-lead-btn">Proceed to downloads</span>
+        </div>
+        <div class="lead-second-subrow">
+          <span class="badge rounded-pill lss-btn q-bg-light-teal only-desktop q-lead-btn">Proceed to downloads</span>
+        </div>
+      </div>
+    </div>
+    <div class="container main-content" id="about">
+      <div class="content-left what-is-quail">
+        <h1>What is Quail?</h1>
+        <p>Multipurpose language with simple yet powerful syntax, embeddable in Java applications
+           and supporting a plenty of different approaches for designing code and writing it.</p>
+      </div>
+      <div class="content-right">
+        <h1>Why use Quail?</h1>
+        <div class="advantages">
+          <div class="advantage">
+            <span class="dot q-bg-light-teal"></span>
+            <h3>Very customizable</h3>
+            <p>With basic regex preprocessor, ability to use any value as an object with its
+              own methods and fields and possibility to override almost every operator you can
+              create very convenient in use code.</p>
+          </div>
+          <div class="advantage">
+            <span class="dot q-bg-darkest-teal"></span>
+            <h3>Java-compatible</h3>
+            <p>Since Quail is written in Java, you can either embed Quail in Java app or embed
+              Java source code or compiled jar into your Quail project.</p>
+          </div>
+          <div class="advantage">
+            <span class="dot q-bg-dark-teal"></span>
+            <h3>Best features</h3>
+            <p>Quail's goal is to create the most convenient in use language using the best
+              practices, syntaxes and approaches from different languages.</p>
+          </div>
+        </div>
+      </div>
+      <div class="content-left">
+        <h1>How does it look like?</h1>
+        <p>Here are some amazing Quail examples:</p>
+        <div class="example">
+          <pre class="example-code">
+class Person {
+  name = ""
+  method hello(this)
+    out("Hello from " + this.name)
+}
+
+# Add methods to class on the way
+Person.someMethod = (this, args...) -> {}
+          </pre>
+          <div>
+            <h3>Prototype-based OOP</h3>
+            <p>Prototype-oriented programming is the best in scripting, especially dynamic typed
+              languages. You can add methods and fields to the class at the runtime or modify
+              existing, easily inherit via standard tools or make your own inheritance system</p>
+          </div>
+        </div>
+        <div class="example">
+          <pre class="example-code">
+Number.sum = (this, a) -> {
+  return this + a
+}
+
+print(15.sum(37))
+          </pre>
+          <div>
+            <h3>Everything is an object</h3>
+            <p>You can use every value in Quail as an object, add, remove, change fields and
+              methods, invoke them.</p>
+          </div>
+        </div>
+        <div class="example">
+          <pre class="example-code">
+dynamic = 10
+dynamic = "Hello"
+
+num clarified1 = 10
+clarified1 = "Hello"
+# causes an error
+
+num | string clarified2 = 10
+clarified2 = "Hello" # Ok
+clarified2 = [1, 2, 3] # causes an error
+          </pre>
+          <div>
+            <h3>Optional static typing</h3>
+            <p>Even though Quail is dynamically typed, it supports the
+              so-called clarifiers and modifiers which modify the variable, so it is restricted to
+              accept only specific type or for example which finalizes the variable, etc.</p>
+          </div>
+        </div>
+        <div class="example">
+          <pre class="example-code">
+use "lang/ji" = ji
+
+JFrame = ji.getClass("javax.swing.JFrame")
+
+win = JFrame("My window")
+win.setSize(640, 480)
+win.setDefaultCloseOperation(3)
+win.setVisible(true)
+
+while win.isVisible() {}
+
+          </pre>
+          <div>
+            <h3>Deep Java integration</h3>
+            <p>The JI (Java Integration) library allows you to create a bridge between Java and Quail,
+              so you can grab a class from Java and it will act almost like native Quail class:
+              you can call methods with native Quail values - they will be automatically converted
+              to Java values, you can construct objects and access fields</p>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex mt-5 mb-5">
+        <h3 class="me-5">Looking for all features?</h3>
+        <span class="btn rounded-pill lss-btn q-bg-dark-teal">See all features</span>
+      </div>
+    </div>
+    <div class="already-interested">
+      <h1><b>Already interested?</b></h1>
+      <h3>Proceed to downloads or see all features</h3>
+      <div class="d-flex justify-content-between mt-3">
+        <span class="btn rounded-pill lss-btn bg-white">See all features</span>
+        <span class="btn rounded-pill lss-btn bg-white">Proceed to downloads</span>
+      </div>
+    </div>
+
+    <footer class="row q-bg-darkest-teal text-white py-5">
+      <div class="footer-logo-and-copy col mb-3 ms-5">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <img src="images/quail80.png" alt="Logo" width="48" class="q-navbar-logo">
+          <span class="fs-4 q-navbar-logo-text">Quail</span>
+        </a>
+        <p class="copyright-notice">
+          © Tapeline 2021-2024<br>
+          GNU GPL v3.0</p>
+      </div>
+
+      <div class="col footer-nav nav">
+        <ul>
+          <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Download</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Docs</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Github</a></li>
+        </ul>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

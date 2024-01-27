@@ -1,0 +1,190 @@
+.burger-button {
+    width: 40px;
+    height: 40px;
+    border: 0;
+}
+
+.burger-i-menu {
+    background: url("/images/burger.png");
+    background-size: cover;
+}
+
+.burger-i-close {
+    background: url("/images/close.png");
+    background-size: cover;
+}
+
+.lead-first-row-mobile {
+    padding-left: 0;
+    align-items: start;
+    margin-top: 100px;
+}
+
+.lead-first-row-mobile .lead-title span {
+    font-size: 7vh;
+    line-height: normal;
+}
+
+.lead-first-row-mobile .lead-title {
+    font-size: 7vh;
+    line-height: normal;
+    height: auto;
+}
+
+.lead-first-row-mobile img {
+    width: 40vw;
+    height: auto;
+}
+
+@media screen and (max-width: 800px) {
+    header {
+        background: #EDF9F7;
+        width: 100vw!important;
+        justify-content: space-between!important;
+        overflow-x: clip;
+        position: fixed;
+        top: 0;
+    }
+
+    .q-navbar-logo-text {
+        color: #324B50;
+    }
+
+    header ul.nav {
+        display: flex;
+        flex-direction: column;
+        background: #EDF9F788;
+        backdrop-filter: blur(10px);
+        position: fixed;
+        text-align: center;
+        transform: translateX(100vw);
+        transition: 0.25s;
+        padding: 0!important;
+        top: 70px;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 100;
+    }
+
+    .navbar-active {
+        transform: translateX(0px)!important;
+    }
+
+    .burger-button {
+        display: block;
+    }
+
+    .lead-first-row-mobile {
+        display: flex;
+    }
+
+    .lead-first-row-desktop {
+        display: none;
+    }
+
+    .lead-second-row {
+        padding: 0;
+        margin-top: -80px;
+        align-items: center;
+    }
+
+    .lss-desc-anc {
+        margin-bottom: 100px;
+        align-items: end;
+        width: 100%;
+    }
+
+    .lead-second-subrow {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .lead {
+        background-position: right;
+        background-size: 30vh;
+        background-image: url("/images/quail-clouds-mobile.svg");
+    }
+
+    .lss-desc {
+        font-size: 0.6em;
+        white-space: normal;
+        width: 80vw;
+        border-bottom-right-radius: 0!important;
+        border-top-right-radius: 0!important;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        line-height: 1.3em;
+    }
+
+    .only-mobile {
+        display: block;
+    }
+
+    .only-desktop {
+        display: none;
+    }
+
+    .lss-mob-btns span {
+        margin-bottom: 16px;
+    }
+
+    .main-content {
+        padding-top: 0;
+    }
+
+    .content-left {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content-right {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content-right h1 {
+        text-align: center;
+        width: 80%;
+    }
+
+    .advantages {
+        flex-direction: column;
+    }
+
+    .advantage {
+        width: 90vw;
+    }
+
+    .example {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .example div, .example pre {
+        width: 90%;
+    }
+
+    .example pre {
+        text-align: left;
+    }
+
+    .already-interested h3 {
+        width: 80%;
+        text-align: center;
+    }
+
+    .already-interested div {
+        flex-direction: column;
+    }
+
+    .already-interested div span {
+        margin-bottom: 16px;
+    }
+}

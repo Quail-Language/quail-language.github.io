@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quail Programming Language</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style-desktop-mid.css">
+  <link rel="stylesheet" href="css/style-desktop-small.css">
+  <link rel="stylesheet" href="css/style-mobile-big.css">
+  <link rel="stylesheet" href="css/secondary-page.css">
+  <script src="js/bootstrap.js"></script>
+  <script src="js/script.js"></script>
+</head>
+<body>
+  <main>
+    <header class="d-flex flex-wrap py-3 q-navbar">
+      <a href="/" class="d-flex align-items-center me-md-auto link-body-emphasis text-decoration-none">
+        <img src="images/quail80.png" alt="Logo" width="48" class="q-navbar-logo">
+        <span class="fs-4 q-navbar-logo-text">Quail</span>
+      </a>
+      <ul class="nav" id="top-navbar">
+        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="/features.html" class="nav-link">Features</a></li>
+        <li class="nav-item"><a href="/download.html" class="nav-link">Download</a></li>
+        <li class="nav-item"><a href="https://github.com/Quail-Language/quail/wiki" class="nav-link">Docs</a></li>
+        <li class="nav-item"><a href="https://github.com/Quail-Language/quail/" class="nav-link">Github</a></li>
+      </ul>
+      <button onclick="toggleMenu('top-navbar')" id="burger" class="burger-button burger-i-menu"></button>
+    </header>
+    <div class="container main-content" id="about">
+      <div class="content-left what-is-quail w-100">
+        <h1>Download Quail</h1>
+        <p class="mb-5">Here you can get QRE and QDK downloads and see tutorial on how to install it
+          <br><br><br></p>
+
+        <div class="advantages w-100">
+          <div class="advantage">
+            <span class="dot q-bg-light-teal"></span>
+            <h3>Install Java 8</h3>
+            <p>
+              <a href="https://www.java.com/download/ie_manual.jsp">Download for Windows</a><br>
+              <a href="https://www.java.com/download/help/linux_x64_install.html">Download for Linux</a><br>
+              <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html">Download for Mac</a>
+            </p>
+          </div>
+          <div class="advantage">
+            <span class="dot q-bg-darkest-teal"></span>
+            <h3>Download Quail</h3>
+            <p><a href="#versions">Proceed to download</a></p>
+          </div>
+          <div class="advantage">
+            <span class="dot q-bg-dark-teal"></span>
+            <h3>Install downloaded package</h3>
+            <p><a href="#install-windows">Install on Windows</a><br>
+              <a href="#install-linux">Install on Linux</a><br></p>
+          </div>
+        </div>
+      </div>
+      <div class="content-left">
+        <h1>How to install?</h1>
+        <h2 id="install-windows">Install on Windows</h2>
+        <ol>
+          <li>Make sure you have at least Java 8 installed</li>
+          <li>Download your chosen Quail version</li>
+          <li>Place <code>qre.jar</code> and/or <code>qdk.jar</code> into some folder on your computer</li>
+        </ol>
+        <h2 id="install-linux">Install on Linux</h2>
+        <ol>
+          <li>Make sure you have at least Java 8 installed</li>
+          <li>Download your chosen Quail version</li>
+          <li>Place <code>qre.jar</code> and/or <code>qdk.jar</code> into some folder on your computer</li>
+        </ol>
+      </div>
+      <div class="content-left mb-5">
+        <h1>Versions</h1>
+        <p><a href="https://github.com/Quail-Language/quail/releases/">All releases on Github</a></p>
+      </div>
+    </div>
+
+    <footer class="row q-bg-darkest-teal text-white py-5">
+      <div class="footer-logo-and-copy col mb-3 ms-5">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <img src="images/quail80.png" alt="Logo" width="48" class="q-navbar-logo">
+          <span class="fs-4 q-navbar-logo-text">Quail</span>
+        </a>
+        <p class="copyright-notice">
+          © Tapeline 2021-2024<br>
+          GNU GPL v3.0</p>
+      </div>
+
+      <div class="col footer-nav nav">
+        <ul>
+          <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Download</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Docs</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Github</a></li>
+        </ul>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
