@@ -7,3 +7,5 @@
 [Quail Specification](/docs/spec/)
 
 [Quail Core Docs](/docs/core/)
+
+[Quail Library Docs](/docs/libs/)
