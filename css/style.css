@@ -270,3 +270,27 @@ body {
     background: #EDF9F7;
     color: #324B50;
 }
+
+.q-dark-text {
+    color: #324B50;
+}
+
+.q-bg-white {
+    background: #EDF9F7;
+}
+
+.q-border-darkest-teal {
+    border-color: #324B50;
+}
+
+main {
+    min-height: 100vh;
+}
+
+.main-content {
+    min-height: 70vh;
+}
+
+footer {
+    margin-top: auto!important;
+}

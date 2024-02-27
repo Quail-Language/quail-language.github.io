@@ -24,19 +24,270 @@
         <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
         <li class="nav-item"><a href="/features.html" class="nav-link">Features</a></li>
         <li class="nav-item"><a href="/download.html" class="nav-link">Download</a></li>
-        <li class="nav-item"><a href="/docs" class="nav-link">Docs</a></li>
+        <li class="nav-item"><a href="/docs/" class="nav-link">Docs</a></li>
         <li class="nav-item"><a href="https://github.com/Quail-Language/quail/" class="nav-link">Github</a></li>
       </ul>
       <button onclick="toggleMenu('top-navbar')" id="burger" class="burger-button burger-i-menu"></button>
     </header>
-    <div class="container main-content" id="about">
+
+    <div class="container main-content mt-0 pt-3">
+      <div class="content-left what-is-quail w-100">
+        <h1>Features</h1>
+        <p class="mb-5">Take a look at the most amazing features in Quail!</p>
+      </div>
+      <div class="content-left">
+        <div class="example">
+          <pre class="example-code">
+#:alias "set\\s*(?&lt;id&gt;[a-zA-Z0-9.]*)\\s*to\\s*(?&lt;value&gt;.*)" $1 = $2
+
+set a to 2
+set c to 455.3
+          </pre>
+          <div>
+            <h3>Preprocessor</h3>
+            <p>Simple regex-based preprocessor opens possibilities to widely customize the syntax</p>
+          </div>
+        </div>
+
+        <div class="example">
+          <pre class="example-code">
+while true {
+    for i in 1:10 do
+        if i % 2 == 0:
+            print(i)
+    end
+}
+          </pre>
+          <div>
+            <h3>Flexible syntax</h3>
+            <p>One of the many examples of Quail's flexible syntax is this. You can define code blocks
+            as you wish: with curly braces, do-end's or even like in Python. Quail does not limit you</p>
+          </div>
+        </div>
+
+        <div class="example">
+          <pre class="example-code">
+a = 10
+a = "abc"
+print(a)
+          </pre>
+          <div>
+            <h3>Dynamic typing</h3>
+            <p>Dynamic typing opens wide possibilities when writing code</p>
+          </div>
+        </div>
+
+        <div class="example">
+          <pre class="example-code">
+a = 10
+a = "Hello"
+a = [1, 2, 3]
+
+num b = 10
+b = "Hello" # causes an error
+
+num | string c = 10
+c = "Hello" # Ok
+c = [1, 2, 3] # causes an error
+          </pre>
+          <div>
+            <h3>A little bit of static typing</h3>
+            <p>While Quail is conceptually a dynamic typed language, it also can do static typing.
+               By default, all variables are dynamic, but you can clarify the type and the
+               variable becomes statically typed</p>
+          </div>
+        </div>
+
+        <div class="example">
+          <pre class="example-code">
+class Person {
+  name = ""
+  method hello(this)
+    out("Hello from " + this.name)
+}
+
+# Add methods to class on the way
+Person.someMethod = (this, args...) -> {}
+          </pre>
+          <div>
+            <h3>Prototype-based OOP</h3>
+            <p>Prototype-oriented programming is the best in scripting, especially dynamic typed
+              languages. You can add methods and fields to the class at the runtime or modify
+              existing, easily inherit via standard tools or make your own inheritance system</p>
+          </div>
+        </div>
+
+        <div class="example">
+          <pre class="example-code">
+Number.sum = (this, a) -> {
+  return this + a
+}
+
+print(15.sum(37))
+          </pre>
+          <div>
+            <h3>Everything is an object</h3>
+            <p>You can use every value in Quail as an object, add, remove, change fields and
+              methods, invoke them.</p>
+          </div>
+        </div>
+
+        <div class="example">
+          <pre class="example-code">
+a = [1, 2, 3]
+b = [4, 5, 6]
+print(a + b)    # [1, 2, 3, 4, 5, 6]
+print(a [+] b)  # [5, 7, 9]
+
+c = [[1, -1], [-1, 1]]
+d = [[1, 2], [3, 4]]
+print(a {*} b)  # [[1, -2], [-3, 4]]
+          </pre>
+          <div>
+            <h3>Rich tools for list manipulation</h3>
+            <p>Alongside with very useful <code>map</code> and <code>filter</code>
+            functions, Quail also provides so-called matrix and array operators which
+            "unfold" lists and perform operations element-by-element</p>
+          </div>
+        </div>
+
+        <div class="example">
+          <pre class="example-code">
+n = num(input())
+f = [((i) -> {
+        if i < 2 return i
+        else return _this[-2] + _this[-1]
+    })(i) through 0:n as i]
+print(f)
+          </pre>
+          <div>
+            <h3>Richer generators</h3>
+            <p>Alongside with array and matrix operators, Quail's list and dict generators
+            have a richer functionality by providing a special variable <code>_this</code>
+            which contains currently generated list or dict. So it is now possible to generate
+            basing on last-generated content. For example, this could be used for calculating
+            Fibonacci numbers.</p>
+          </div>
+        </div>
+
+        <div class="example">
+          <pre class="example-code">
+through 0:10 as x {
+  through 0:10 as y {
+    through 0:10 as z {
+      if z == 5
+        strike 2
+      print(x, y, z)
+    }
+  }
+}
+          </pre>
+          <div>
+            <h3><code>strike</code> syntax</h3>
+            <p><code>strike</code> works pretty much same as <code>break</code>, but with nested
+            loops. In this example, when <code>z</code> reaches 5, not only z's loop will be broken,
+            but also the one that corresponds to <code>y</code>, because <code>2</code> is specified
+            in the <code>strike</code> instruction. But x's loop will remain untouched</p>
+          </div>
+        </div>
+
+        <div class="example">
+          <pre class="example-code">
+use "lang/ji" = ji
+
+JFrame = ji.getClass("javax.swing.JFrame")
+
+win = JFrame("My window")
+win.setSize(640, 480)
+win.setDefaultCloseOperation(3)
+win.setVisible(true)
+
+while win.isVisible() {}
+
+          </pre>
+          <div>
+            <h3>Deep Java integration</h3>
+            <p>The JI (Java Integration) library allows you to create a bridge between Java and Quail,
+              so you can grab a class from Java and it will act almost like native Quail class:
+              you can call methods with native Quail values - they will be automatically converted
+              to Java values, you can construct objects and access fields</p>
+          </div>
+        </div>
+
+        <div class="example">
+          <pre class="example-code">
+class Queue {
+    #? Implementation of a single-ended queue.
+
+    num size(this) {}
+    void add(this, object obj) {
+        #? Add object to back of queue
+    }
+    object pop(this) {
+        #? Pop object from front.
+        #? If queue is empty, null is returned
+    }
+    void clear(this) {}
+    object peek(this) {
+        #? Get object from front without popping it.
+        #? If queue is empty, null is returned
+    }
+}
+          </pre>
+          <div>
+            <h3>Inbuilt documentation language</h3>
+            <p>You can create documentation right in your source code using comments that
+            start with <code>#?</code>. Then you can export that documentation to HTML
+            to serve on your documentation portal.
+              <br><br>
+              <i>btw, this is exactly how all <a href="docs/libs/">Quail Library Docs</a> are created</i></p>
+          </div>
+        </div>
+
+        <div class="example">
+          <div class=""><pre class="example-code w-100">
+public class QuailTestAddon extends QuailAddon {
+    public List&lt;BuiltinLibrary&gt; providedLibraries() {
+        return Arrays.asList(
+                new MyTestLibrary()
+        );
+    }
+}
+public class MyTestLibrary implements BuiltinLibrary {
+    public String id() { return "test/mytestlib"; }
+    public QObject constructLibrary(Runtime runtime) {
+        ...
+        contents.put("test", new MyTestFuncTest(runtime));
+        ...
+    }
+}
+public class MyTestFuncTest extends QBuiltinFunc {
+    public QObject action(...) {
+        return Val("Test library works!");
+    }
+}
+          </pre>
+          <pre class="example-code w-100">
+use "test/mytestlib" = testlib
+print(testlib.test())
+          </pre>
+          </div>
+          <div>
+            <h3>Quail Addons</h3>
+            <p>And if even all these features weren't enough for you, Quail allows you to
+            create "addons" that can add new preprocessor directives, parser annotations
+            and libraries all in pure Java. Then you just package your addon into <code>.jar</code>
+            and add a little <code>-G.addons=myaddon.jar</code> flag when starting Quail</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <footer class="row q-bg-darkest-teal text-white py-5">
       <div class="footer-logo-and-copy col mb-3 ms-5">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
           <img src="images/quail80.png" alt="Logo" width="48" class="q-navbar-logo">
-          <span class="fs-4 q-navbar-logo-text">Quail</span>
+          <span class="fs-4 q-navbar-logo-text text-white">Quail</span>
         </a>
         <p class="copyright-notice">
           © Tapeline 2021-2024<br>

@@ -24,7 +24,7 @@
         <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
         <li class="nav-item"><a href="/features.html" class="nav-link">Features</a></li>
         <li class="nav-item"><a href="/download.html" class="nav-link">Download</a></li>
-        <li class="nav-item"><a href="/docs" class="nav-link">Docs</a></li>
+        <li class="nav-item"><a href="/docs/" class="nav-link">Docs</a></li>
         <li class="nav-item"><a href="https://github.com/Quail-Language/quail/" class="nav-link">Github</a></li>
       </ul>
       <button onclick="toggleMenu('top-navbar')" id="burger" class="burger-button burger-i-menu"></button>
@@ -32,9 +32,12 @@
     <div class="container main-content" id="about">
       <div class="content-left what-is-quail w-100">
         <h1>Download Quail</h1>
-        <p class="mb-5">Here you can get QRE and QDK downloads and see tutorial on how to install it
-          <br><br><br></p>
-
+        <p class="mb-5">Here you can get QRE and QDK downloads and see tutorial on how to install it</p>
+        <span class="badge rounded-pill lss-btn q-bg-violet q-lead-btn fs-5"
+              onclick="window.location.href = '/winsetup-quail.exe'">Installer for Windows</span>
+        <span class="badge rounded-pill lss-btn q-bg-violet q-lead-btn fs-5"
+              onclick="window.location.href = '/quail-install.sh'">Installer for Linux</span>
+        <h2 class="mb-5 mt-5 q-dark-text">Manual installation</h2>
         <div class="advantages w-100">
           <div class="advantage">
             <span class="dot q-bg-light-teal"></span>
@@ -60,17 +63,47 @@
       </div>
       <div class="content-left">
         <h1>How to install?</h1>
-        <h2 id="install-windows">Install on Windows</h2>
+        <h2 id="install-windows" class="q-dark-text">Manual installation on Windows</h2>
         <ol>
           <li>Make sure you have at least Java 8 installed</li>
           <li>Download your chosen Quail version</li>
           <li>Place <code>qre.jar</code> and/or <code>qdk.jar</code> into some folder on your computer</li>
+          <li>Create an environment variable called <code>QUAIL_HOME</code> and set it to that folder</li>
+          <li>Place the following contents into file at <code>C:\Windows\quail.bat</code>
+              <pre>
+@echo off
+if exist "%QUAIL_HOME%\jre\jdk1.8.0_402\bin\java.exe" (
+    "%QUAIL_HOME%\jre\jdk1.8.0_402\bin\java.exe" -jar "%QUAIL_HOME%\qre.jar" %*
+)
+if not exist "%QUAIL_HOME%\jre\jdk1.8.0_402\bin\java.exe" (
+    java -jar "%QUAIL_HOME%\qre.jar" %*
+)</pre></li>
+          <li>Place the following contents into file at <code>C:\Windows\quail-qdk.bat</code>
+              <pre>
+@echo off
+if exist "%QUAIL_HOME%\jre\jdk1.8.0_402\bin\java.exe" (
+"%QUAIL_HOME%\jre\jdk1.8.0_402\bin\java.exe" -jar "%QUAIL_HOME%\qdk.jar" %*
+)
+if not exist "%QUAIL_HOME%\jre\jdk1.8.0_402\bin\java.exe" (
+java -jar "%QUAIL_HOME%\qdk.jar" %*
+)</pre></li>
+            <li>Now you can access Quail with <code>quail</code> and <code>quail-qdk</code> commands</li>
         </ol>
-        <h2 id="install-linux">Install on Linux</h2>
+        <h2 id="install-linux" class="q-dark-text">Manual installation on Linux</h2>
         <ol>
           <li>Make sure you have at least Java 8 installed</li>
           <li>Download your chosen Quail version</li>
-          <li>Place <code>qre.jar</code> and/or <code>qdk.jar</code> into some folder on your computer</li>
+          <li>Place <code>qre.jar</code> and/or <code>qdk.jar</code> into <code>/bin/quail-jars/</code></li>
+          <li>Place the following contents into file at <code>/bin/quail</code>
+            <pre>#!/bin/bash
+java -jar /bin/quail-jars/qre.jar $@</pre></li>
+          <li>Place the following contents into file at <code>/bin/quail-qdk</code>
+            <pre>#!/bin/bash
+java -jar /bin/quail-jars/qdk.jar $@</pre></li>
+          <li>Run<pre>
+sudo chmod +x /bin/quail
+sudo chmod +x /bin/quail-qdk</pre></li>
+          <li>Now you can access Quail with <code>quail</code> and <code>quail-qdk</code> commands</li>
         </ol>
       </div>
       <div class="content-left mb-5">
@@ -83,7 +116,7 @@
       <div class="footer-logo-and-copy col mb-3 ms-5">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
           <img src="images/quail80.png" alt="Logo" width="48" class="q-navbar-logo">
-          <span class="fs-4 q-navbar-logo-text">Quail</span>
+          <span class="fs-4 q-navbar-logo-text text-white">Quail</span>
         </a>
         <p class="copyright-notice">
           © Tapeline 2021-2024<br>
