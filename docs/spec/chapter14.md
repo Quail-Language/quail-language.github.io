@@ -136,7 +136,7 @@ To launch program in debug mode, change launch mode to `debug`
 (See [Chapter 12: Console operation](chapter12.md))
 
 Default port for debugging will be 4004. To change it add a flag 
-`-G.debugPort=PORT`.
+`-i.debugPort=PORT`.
 
 After launch, Quail will not start the program until debug client
 is connected

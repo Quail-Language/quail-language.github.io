@@ -16,7 +16,7 @@
 
 [Chapter 7: Memory and scopes](chapter7.md)
 
-[Chapter 8: Statement executions](chapter8.md)
+[Chapter 8: Statement executions](chapter8.md) `Not Started`
 
 [Chapter 9: External libraries](chapter9.md)
 
@@ -31,5 +31,3 @@
 [Chapter 14: Debugger](chapter14.md)
 
 [Chapter 15: QRE and QDK](chapter15.md)
-
-[Chapter 16: Addons](chapter16.md)
