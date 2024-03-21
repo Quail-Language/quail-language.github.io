@@ -1,0 +1,51 @@
+%YAML 1.2
+---
+name: Quail 2
+file_extensions:
+  - q
+  - quail
+scope: source.quail
+contexts:
+  main:
+    - match: \b(class|like|constructor|do|does|then|has|with|end|function|method|override|gets|sets|if|else|elseif|for|every|while|through|loop|stop when|try|catch|assert|strike|import|use|return|throw|async)\b
+      scope: keyword.control
+
+    - match: '"'
+      push: string
+
+    - match: ^#:.*$
+      scope: meta.preprocessor
+
+    - match: ^#\?.*$
+      scope: comment.block.documentation
+
+    - match: ^#.*$
+      scope: comment.line
+
+    - match: \b\@[A-Za-z0-9_]+\b
+      scope: punctuation.definition.annotation
+
+    - match: \b(func|string|bool|num|dict|list|void)\b
+      scope: storage.type
+
+    - match: \b(required|local|final|static)\b
+      scope: storage.modifier
+
+    - match: \b(_this|this)\b
+      scope: variable.language
+
+    - match: \b(Exception|AssertionException|CircularDependencyException|DerivationException|IOException|IterationNotStartedException|IterationStopException|UnsuitableTypeException|UnsuitableValueException|UnsupportedConversionException|UnsupportedIterationException|UnsupportedOperationException|UnsupportedStepSubscriptException|UnsupportedSubscriptException|UnsupportedUnaryOperationException|IndexOutOfBoundsException|ClarificationException|ArgumentClarificationException|FinalAssignedException|InternalException|UnpackingException|UnknownLibraryException|all|any|clone|copy|enumerate|map|hash|millis|zip|input|print|put|abs|acos|asin|atan|atan2|cos|cosh|sum|max|min|sin|sinh|tan|tanh|bin|dec|hex|oct|readFile|writeFile)\b
+      scope: variable.function
+
+    - match: ([0-9]+)(.[0-9]+)?
+      scope: constant.numeric
+
+    - match: (null|false|true)
+      scope: constant.language
+
+  string:
+    - meta_scope: string.quoted.double.c
+    - match: \\.
+      scope: constant.character.escape.c
+    - match: '"'
+      pop: true
